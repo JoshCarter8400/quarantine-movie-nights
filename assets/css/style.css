@@ -1,5 +1,16 @@
+body {
+    margin: auto;
+    padding: 0;
+}
+
 .center {
     display: flex;
     justify-content: center;
     align-items: center;
+    padding: 25px;
+    font-size: 48px;
+}
+
+.menu-list li {
+    list-style: none;
 }
