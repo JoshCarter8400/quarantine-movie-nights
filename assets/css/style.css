@@ -1,7 +1,5 @@
-.notification h1 {
-    text-align: center;
-}
-
-.container {
-    background-color: black;
+.center {
+    display: flex;
+    justify-content: center;
+    align-items: center;
 }
