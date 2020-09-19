@@ -10,18 +10,117 @@
 </head>
 
 <body>
-    <div class="container is-fluid">
-        <div class="notification">
-            <h1 class="title">Get your Popcorn Ready!!</h1>
+
+    <div class="columns">
+        <div class="column is-full center has-background-black">
+            <h1 class="title is-1 has-text-white">Quarantine Movie Night!</h1>
         </div>
+
     </div>
 
 
-    <script src="https://cdnjs.cloudflare.com/ajax/libs/jquery/3.5.1/jquery.min.js" integrity="sha512-bLT0Qm9VnAYZDflyKcBaQ2gg0hSYNQrJ8RilYldYQ1FxQYoCLtUjuuRuZo+fjqhx/qtq/1itJ0C2ejDxltZVFg==" crossorigin="anonymous"></script>
-    <script src="https://cdnjs.cloudflare.com/ajax/libs/jqueryui-touch-punch/0.2.3/jquery.ui.touch-punch.min.js" integrity="sha512-0bEtK0USNd96MnO4XhH8jhv3nyRF0eK87pJke6pkYf3cM0uDIhNJy9ltuzqgypoIFXw3JSuiy04tVk4AjpZdZw==" crossorigin="anonymous"></script>
-    <script src="https://cdnjs.cloudflare.com/ajax/libs/moment.js/2.28.0/moment.min.js" integrity="sha512-Q1f3TS3vSt1jQ8AwP2OuenztnLU6LwxgyyYOG1jgMW/cbEMHps/3wjvnl1P3WTrF3chJUWEoxDUEjMxDV8pujg==" crossorigin="anonymous"></script>
-    <script src="https://cdnjs.cloudflare.com/ajax/libs/sweetalert/2.1.2/sweetalert.min.js" integrity="sha512-AA1Bzp5Q0K1KanKKmvN/4d3IRKVlv9PYgwFPvm32nPO6QS8yH1HO7LbgB1pgiOxPtfeg5zEn2ba64MUcqJx6CA==" crossorigin="anonymous"></script>
-    <script src="./assets/js/script.js"></script>
+    <div class="tile is-ancestor">
+        <div class="tile is-vertical is-8">
+            <div class="tile">
+
+                <div class="tile is-parent">
+                    <article class="tile is-child notification is-success has-text-centered">
+                        <div class="content">
+                            <p class="title">You can select your Genre here!</p>
+                            <div class="content">
+                                <div id="dropdown" class="select">
+                                    <select>
+                                        <option>Select dropdown</option>
+                                        <option>With options</option>
+                                    </select>
+                                </div>
+                            </div>
+                        </div>
+                    </article>
+                </div>
+            </div>
+            <div class="tile">
+
+                <div class="tile is-parent">
+                    <article class="tile is-child notification is-success">
+                        <div class="content">
+                            <p class="title">Which actor or actress are you in the mood for tonight?</p>
+                            <div class="content">
+                                <div class="field">
+                                    <div id="actor-input" class="control">
+                                        <input class="input is-medium" type="text" placeholder="Medium input">
+                                    </div>
+                                </div>
+                            </div>
+                    </article>
+                    </div>
+                    <div class="tile is-parent">
+                        <article class="tile is-child notification is-success">
+                            <div class="content">
+                                <p class="title">Please Click below to see your choices.</p>
+                                <div class="content">
+                                    <button class="button is-primary">
+                                    <span class="icon">
+                                        <i class="fab fa-twitter"></i>
+                                    </span>
+                                    <span>Our button can go here</span>
+                                </button>
+                                </div>
+                            </div>
+                        </article>
+                    </div>
+                    <div class="tile is-parent">
+                        <article class="tile is-child notification is-success">
+                            <div class="content">
+                                <p class="title">Your Selection is available on these streaming services.</p>
+                                <div id="streaming-container" class="content">
+                                    <ul class="menu-list">
+                                        <li><a>Payments</a></li>
+                                        <li><a>Transfers</a></li>
+                                        <li><a>Balance</a></li>
+                                    </ul>
+                                </div>
+                            </div>
+                        </article>
+                    </div>
+                </div>
+
+                <div class="tile">
+
+                    <div class="tile is-parent has-text-centered">
+                        <article class="tile is-child ">
+                            <div class="content">
+                                <p class="title">Now Showing</p>
+                                <div class="content">
+                                    <ul id="now-playing" class="menu-list">
+                                        <li><a>Payments</a></li>
+                                        <li><a>Transfers</a></li>
+                                        <li><a>Balance</a></li>
+                                    </ul>
+                                </div>
+                            </div>
+                        </article>
+                    </div>
+                </div>
+
+            </div>
+            <div class="tile is-parent">
+                <article class="tile is-child notification is-info">
+                    <p class="title"></p>
+                    <p class="subtitle">With an image</p>
+                    <figure class="image.is-5by4">
+                        <img src="https://bulma.io/images/placeholders/640x480.png">
+                    </figure>
+                </article>
+            </div>
+
+        </div>
+
+        <script src="https://cdnjs.cloudflare.com/ajax/libs/jquery/3.5.1/jquery.min.js" integrity="sha512-bLT0Qm9VnAYZDflyKcBaQ2gg0hSYNQrJ8RilYldYQ1FxQYoCLtUjuuRuZo+fjqhx/qtq/1itJ0C2ejDxltZVFg==" crossorigin="anonymous"></script>
+        <script src="https://cdnjs.cloudflare.com/ajax/libs/jqueryui-touch-punch/0.2.3/jquery.ui.touch-punch.min.js" integrity="sha512-0bEtK0USNd96MnO4XhH8jhv3nyRF0eK87pJke6pkYf3cM0uDIhNJy9ltuzqgypoIFXw3JSuiy04tVk4AjpZdZw==" crossorigin="anonymous"></script>
+        <script src="https://cdnjs.cloudflare.com/ajax/libs/moment.js/2.28.0/moment.min.js" integrity="sha512-Q1f3TS3vSt1jQ8AwP2OuenztnLU6LwxgyyYOG1jgMW/cbEMHps/3wjvnl1P3WTrF3chJUWEoxDUEjMxDV8pujg==" crossorigin="anonymous"></script>
+        <script src="https://cdnjs.cloudflare.com/ajax/libs/sweetalert/2.1.2/sweetalert.min.js" integrity="sha512-AA1Bzp5Q0K1KanKKmvN/4d3IRKVlv9PYgwFPvm32nPO6QS8yH1HO7LbgB1pgiOxPtfeg5zEn2ba64MUcqJx6CA==" crossorigin="anonymous"></script>
+        <script src="./assets/js/script.js"></script>
 </body>
 
 </html>
