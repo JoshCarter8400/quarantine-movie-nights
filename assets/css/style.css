@@ -1,7 +1,16 @@
-.notification h1 {
-    text-align: center;
+body {
+    margin: auto;
+    padding: 0;
 }
 
-.container {
-    background-color: black;
+.center {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    padding: 25px;
+    font-size: 48px;
+}
+
+.menu-list li {
+    list-style: none;
 }
