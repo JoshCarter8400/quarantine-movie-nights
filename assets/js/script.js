@@ -13,7 +13,12 @@ var getPersonId = function(actor) {
 
     fetch(apiUrl).then(function(response) {
         response.json().then(function(data) {
-            console.log(data)
+            var searchOption = {
+                actor: data.results[0].id,
+                genre: $("#genre-dropdown").val().trim()
+
+            }
+            getMovies(searchOption)
 
         })
 
@@ -32,13 +37,15 @@ var searchHandler = function(event) {
 
     if (!actor) {
 
-        $(".modal-content").text("Please Enter Actor or Actress")
+        $(".modal-card-title").text("Please Enter Actor or Actress")
         $(".modal").addClass("is-active is-clipped")
     }
 
     $("#close-modal-btn").click(function() {
         $(".modal").removeClass("is-active");
     });
+
+    getPersonId(actor)
 }
 
 
@@ -57,6 +64,7 @@ function getMovies(options) {
             response.json().then(function(data) {
                 // data.results will be an array of movie info
                 displayMovies(data.results);
+
             });
         } else {
             displayError("Error: " + response.statusText);
@@ -66,4 +74,12 @@ function getMovies(options) {
         displayError("Unable to connect to TMDb");
     });
 }
+
 popcornBtn.addEventListener("click", searchHandler)
+    // this allows the user to search by using the enter button instead of just the search button click event
+actorInput.addEventListener("keyup", function(event) {
+    // Number 13 is the "Enter" key on the keyboard
+    if (event.keyCode === 13) {
+        searchHandler(event)
+    }
+})
