@@ -44,6 +44,9 @@ var searchHandler = function (event) {
   $("#close-modal-btn").click(function () {
     $(".modal").removeClass("is-active");
   });
+  $(".modal-background").click(function () {
+    $(".modal").removeClass("is-active");
+  });
 
   getPersonId(actor)
 }
