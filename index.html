@@ -28,20 +28,11 @@
                         <div class="content">
                             <p class="title">You can select your Genre here!</p>
                             <div class="content">
-                                <div class="dropdown is-active">
-                                    <div class="dropdown-trigger">
-                                        <button class="button" aria-haspopup="true" aria-controls="dropdown-menu">
-                                            <span>Dropdown button</span>
-                                            <span class="icon is-small">
-                                                <i class="fas fa-angle-down" aria-hidden="true"></i>
-                                            </span>
-                                        </button>
-                                    </div>
-                                    <div class="dropdown-menu" id="dropdown-menu" role="menu">
-                                        <!-- <div class="dropdown-content">
-
-                                        </div> -->
-                                    </div>
+                                <div id="dropdown" class="select">
+                                    <select>
+                                        <option>Select dropdown</option>
+                                        <option>With options</option>
+                                    </select>
                                 </div>
                             </div>
                         </div>
@@ -56,7 +47,7 @@
                             <p class="title">Which actor or actress are you in the mood for tonight?</p>
                             <div class="content">
                                 <div class="field">
-                                    <div class="control">
+                                    <div id="actor-input" class="control">
                                         <input class="input is-medium" type="text" placeholder="Medium input">
                                     </div>
                                 </div>
@@ -82,7 +73,7 @@
                         <article class="tile is-child notification is-success">
                             <div class="content">
                                 <p class="title">Your Selection is available on these streaming services.</p>
-                                <div class="content">
+                                <div id="streaming-container" class="content">
                                     <ul class="menu-list">
                                         <li><a>Payments</a></li>
                                         <li><a>Transfers</a></li>
@@ -101,7 +92,7 @@
                             <div class="content">
                                 <p class="title">Now Showing</p>
                                 <div class="content">
-                                    <ul class="menu-list">
+                                    <ul id="now-playing" class="menu-list">
                                         <li><a>Payments</a></li>
                                         <li><a>Transfers</a></li>
                                         <li><a>Balance</a></li>
@@ -115,7 +106,7 @@
             </div>
             <div class="tile is-parent">
                 <article class="tile is-child notification is-info">
-                    <p class="title">Middle tile</p>
+                    <p class="title"></p>
                     <p class="subtitle">With an image</p>
                     <figure class="image.is-5by4">
                         <img src="https://bulma.io/images/placeholders/640x480.png">
