@@ -42,4 +42,5 @@ var searchHandler = function(event) {
     }
 }
 
+
 popcornBtn.addEventListener("click", searchHandler)
