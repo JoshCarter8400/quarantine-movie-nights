@@ -28,8 +28,8 @@
                         <div class="content">
                             <p class="title">You can select your Genre here!</p>
                             <div class="content">
-                                <div id="dropdown" class="select">
-                                    <select>
+                                <div class="select">
+                                    <select id="genre-dropdown">
                                         <option>Select dropdown</option>
                                         <option>With options</option>
                                     </select>
@@ -47,8 +47,8 @@
                             <p class="title">Which actor or actress are you in the mood for tonight?</p>
                             <div class="content">
                                 <div class="field">
-                                    <div id="actor-input" class="control">
-                                        <input class="input is-medium" type="text" placeholder="Medium input">
+                                    <div class="control">
+                                        <input id="actor-input" class="input is-medium" type="text" placeholder="Medium input">
                                     </div>
                                 </div>
                             </div>
@@ -59,7 +59,7 @@
                             <div class="content">
                                 <p class="title">Please Click below to see your choices.</p>
                                 <div class="content">
-                                    <button class="button is-primary">
+                                    <button id="search-btn" class="button is-primary">
                                     <span class="icon">
                                         <i class="fab fa-twitter"></i>
                                     </span>
@@ -114,6 +114,13 @@
                 </article>
             </div>
 
+        </div>
+        <div class="modal">
+            <div class="modal-background"></div>
+            <div class="modal-content">
+
+            </div>
+            <button class="modal-close is-large" aria-label="close"></button>
         </div>
 
         <script src="https://cdnjs.cloudflare.com/ajax/libs/jquery/3.5.1/jquery.min.js" integrity="sha512-bLT0Qm9VnAYZDflyKcBaQ2gg0hSYNQrJ8RilYldYQ1FxQYoCLtUjuuRuZo+fjqhx/qtq/1itJ0C2ejDxltZVFg==" crossorigin="anonymous"></script>
