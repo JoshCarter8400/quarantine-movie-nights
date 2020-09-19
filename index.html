@@ -1,58 +1,59 @@
 <!DOCTYPE html>
 <html lang="en">
 
-<head>
-    <meta charset="UTF-8">
-    <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/bulma/0.9.0/css/bulma.min.css" integrity="sha512-ADrqa2PY1TZtb/MoLZIZu/Z/LlPaWQeDMBV73EMwjGam43/JJ5fqW38Rq8LJOVGCDfrJeOMS3Q/wRUVzW5DkjQ==" crossorigin="anonymous" />
-    <link rel="stylesheet" href="./assets/css/style.css">
-    <title>Document</title>
-</head>
+    <head>
+        <meta charset="UTF-8">
+        <meta name="viewport" content="width=device-width, initial-scale=1.0">
+        <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/bulma/0.9.0/css/bulma.min.css" integrity="sha512-ADrqa2PY1TZtb/MoLZIZu/Z/LlPaWQeDMBV73EMwjGam43/JJ5fqW38Rq8LJOVGCDfrJeOMS3Q/wRUVzW5DkjQ==" crossorigin="anonymous" />
+        <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/5.14.0/css/all.min.css" integrity="sha512-1PKOgIY59xJ8Co8+NE6FZ+LOAZKjy+KY8iq0G4B3CyeY6wYHN3yt9PW0XpSriVlkMXe40PTKnXrLnZ9+fkDaog==" crossorigin="anonymous" />
+        <link rel="stylesheet" href="./assets/css/style.css">
+        <title>Document</title>
+    </head>
 
-<body>
+    <body>
 
-    <div class="columns">
-        <div class="column is-full center has-background-black">
-            <h1 class="title is-1 has-text-white">Quarantine Movie Night!</h1>
+        <div class="columns">
+            <div class="column is-full center has-background-black">
+                <h1 class="title is-1 has-text-white">Quarantine Movie Night!</h1>
+            </div>
+
         </div>
 
-    </div>
 
+        <div class="tile is-ancestor">
+            <div class="tile is-vertical is-8">
+                <div class="tile">
 
-    <div class="tile is-ancestor">
-        <div class="tile is-vertical is-8">
-            <div class="tile">
-
-                <div class="tile is-parent">
-                    <article class="tile is-child notification is-success has-text-centered">
-                        <div class="content">
-                            <p class="title">You can select your Genre here!</p>
+                    <div class="tile is-parent">
+                        <article class="tile is-child notification is-success has-text-centered">
                             <div class="content">
-                                <div class="select">
-                                    <select id="genre-dropdown">
-                                        <option>Select dropdown</option>
-                                        <option>With options</option>
-                                    </select>
-                                </div>
-                            </div>
-                        </div>
-                    </article>
-                </div>
-            </div>
-            <div class="tile">
-
-                <div class="tile is-parent">
-                    <article class="tile is-child notification is-success">
-                        <div class="content">
-                            <p class="title">Which actor or actress are you in the mood for tonight?</p>
-                            <div class="content">
-                                <div class="field">
-                                    <div class="control">
-                                        <input id="actor-input" class="input is-medium" type="text" placeholder="Medium input">
+                                <p class="title">You can select your Genre here!</p>
+                                <div class="content">
+                                    <div class="select">
+                                        <select id="genre-dropdown">
+                                            <option>Select dropdown</option>
+                                            <option>With options</option>
+                                        </select>
                                     </div>
                                 </div>
                             </div>
-                    </article>
+                        </article>
+                    </div>
+                </div>
+                <div class="tile">
+
+                    <div class="tile is-parent">
+                        <article class="tile is-child notification is-success">
+                            <div class="content">
+                                <p class="title">Which actor or actress are you in the mood for tonight?</p>
+                                <div class="content">
+                                    <div class="field">
+                                        <div class="control">
+                                            <input id="actor-input" class="input is-medium" type="text" placeholder="Medium input">
+                                        </div>
+                                    </div>
+                                </div>
+                        </article>
                     </div>
                     <div class="tile is-parent">
                         <article class="tile is-child notification is-success">
@@ -60,11 +61,11 @@
                                 <p class="title">Please Click below to see your choices.</p>
                                 <div class="content">
                                     <button id="search-btn" class="button is-primary">
-                                    <span class="icon">
-                                        <i class="fab fa-twitter"></i>
-                                    </span>
-                                    <span>Our button can go here</span>
-                                </button>
+                                        <span class="icon">
+                                            <i class="fab fa-twitter"></i>
+                                        </span>
+                                        <span>Our button can go here</span>
+                                    </button>
                                 </div>
                             </div>
                         </article>
@@ -92,11 +93,7 @@
                             <div class="content">
                                 <p class="title">Now Showing</p>
                                 <div class="content">
-                                    <ul id="now-playing" class="menu-list">
-                                        <li><a>Payments</a></li>
-                                        <li><a>Transfers</a></li>
-                                        <li><a>Balance</a></li>
-                                    </ul>
+                                    <ul id="now-playing" class="menu-list"></ul>
                                 </div>
                             </div>
                         </article>
@@ -127,10 +124,10 @@
 
 
         </div>
-    </div>
-    <script src="https://cdnjs.cloudflare.com/ajax/libs/jquery/3.5.1/jquery.min.js" integrity="sha512-bLT0Qm9VnAYZDflyKcBaQ2gg0hSYNQrJ8RilYldYQ1FxQYoCLtUjuuRuZo+fjqhx/qtq/1itJ0C2ejDxltZVFg==" crossorigin="anonymous"></script>
-    <script src="https://cdnjs.cloudflare.com/ajax/libs/jqueryui-touch-punch/0.2.3/jquery.ui.touch-punch.min.js" integrity="sha512-0bEtK0USNd96MnO4XhH8jhv3nyRF0eK87pJke6pkYf3cM0uDIhNJy9ltuzqgypoIFXw3JSuiy04tVk4AjpZdZw==" crossorigin="anonymous"></script>
-    <script src="./assets/js/script.js"></script>
-</body>
+        </div>
+        <script src="https://cdnjs.cloudflare.com/ajax/libs/jquery/3.5.1/jquery.min.js" integrity="sha512-bLT0Qm9VnAYZDflyKcBaQ2gg0hSYNQrJ8RilYldYQ1FxQYoCLtUjuuRuZo+fjqhx/qtq/1itJ0C2ejDxltZVFg==" crossorigin="anonymous"></script>
+        <script src="https://cdnjs.cloudflare.com/ajax/libs/jqueryui-touch-punch/0.2.3/jquery.ui.touch-punch.min.js" integrity="sha512-0bEtK0USNd96MnO4XhH8jhv3nyRF0eK87pJke6pkYf3cM0uDIhNJy9ltuzqgypoIFXw3JSuiy04tVk4AjpZdZw==" crossorigin="anonymous"></script>
+        <script src="./assets/js/script.js"></script>
+    </body>
 
 </html>
