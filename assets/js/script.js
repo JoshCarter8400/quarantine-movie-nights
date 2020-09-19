@@ -1,6 +1,6 @@
-var popcornBtn = document.querySelector("#search-btn")
-var searchGenre = document.querySelector("#genre-dropdown")
-var actorInput = document.querySelector("#actor-input")
+var popcornBtn = document.querySelector("#search-btn");
+var searchGenre = document.querySelector("#genre-dropdown");
+var actorInput = document.querySelector("#actor-input");
 
 
 
@@ -8,7 +8,7 @@ var getPersonId = function (actor) {
 
 
   var apiUrl =
-    "https://api.themoviedb.org/3/search/person?api_key=0bd9398a9daad70a50c685a4f8c0a74b&language=en-US&query=" + encodeURIComponent(actor) + "&page=1&include_adult=false"
+    "https://api.themoviedb.org/3/search/person?api_key=0bd9398a9daad70a50c685a4f8c0a74b&language=en-US&query=" + encodeURIComponent(actor) + "&page=1&include_adult=false";
 
 
   fetch(apiUrl).then(function (response) {
@@ -18,9 +18,9 @@ var getPersonId = function (actor) {
         genre: $("#genre-dropdown").val().trim()
 
       }
-      getMovies(searchOption)
+      getMovies(searchOption);
 
-    })
+    });
 
   });
 
@@ -30,26 +30,18 @@ var getPersonId = function (actor) {
 };
 
 var searchHandler = function (event) {
-  var searchGenre = document.querySelector("#genre-dropdown")
-  var actorInput = document.querySelector("#actor-input")
+  var searchGenre = document.querySelector("#genre-dropdown");
+  var actorInput = document.querySelector("#actor-input");
 
   var actor = actorInput.value.trim();
 
   if (!actor) {
-
-    $(".modal-card-title").text("Please Enter Actor or Actress")
-    $(".modal").addClass("is-active is-clipped")
+    displayError("Please Enter Actor or Actress");
+    return;
   }
 
-  $("#close-modal-btn").click(function () {
-    $(".modal").removeClass("is-active");
-  });
-  $(".modal-background").click(function () {
-    $(".modal").removeClass("is-active");
-  });
-
-  getPersonId(actor)
-}
+  getPersonId(actor);
+};
 
 
 
@@ -59,7 +51,7 @@ function getMovies(options) {
 
   // add the desired genre and actor to the query string
   // hardcoded genre for now
-  apiUrl += "&with_genres=" + "27"; //options.genre;
+  apiUrl += "&with_genres=" + "0"; //options.genre;
   apiUrl += "&with_cast=" + options.actor;
 
   // fetch from the API
@@ -67,6 +59,10 @@ function getMovies(options) {
     if (response.ok) {
       response.json().then(function (data) {
         // data.results will be an array of movie info
+        if (data.results.length === 0) {
+          displayError("No matches found for " + searchGenre.selectedOptions[0].innerHTML + " movies with " + actorInput.value + ".");
+          return;
+        }
         displayMovies(data.results);
 
       });
@@ -93,11 +89,25 @@ function displayMovies(movieData) {
 }
 
 
-popcornBtn.addEventListener("click", searchHandler)
+function displayError(errMsg) {
+  $(".modal-card-title").text(errMsg);
+  $(".modal").addClass("is-active is-clipped");
+}
+
+
+popcornBtn.addEventListener("click", searchHandler);
 // this allows the user to search by using the enter button instead of just the search button click event
 actorInput.addEventListener("keyup", function (event) {
   // Number 13 is the "Enter" key on the keyboard
   if (event.keyCode === 13) {
-    searchHandler(event)
+    searchHandler(event);
   }
 })
+
+
+$("#close-modal-btn").click(function () {
+  $(".modal").removeClass("is-active");
+});
+$(".modal-background").click(function () {
+  $(".modal").removeClass("is-active");
+});
