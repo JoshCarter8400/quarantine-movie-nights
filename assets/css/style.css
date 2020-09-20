@@ -23,6 +23,11 @@ body {
     list-style: none;
 }
 
+.footer {
+    padding: 1rem 1.5rem 1rem;
+}
+
 .footer img {
     max-width: 30px;
+    max-height: 10px;
 }
