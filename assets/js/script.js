@@ -37,7 +37,7 @@ var searchHandler = function (event) {
     var actor = actorInput.value.trim();
 
     if (!actor) {
-        displayError("Please Enter Actor or Actress");
+        displayError("Please enter an actor name");
         return;
     }
 
