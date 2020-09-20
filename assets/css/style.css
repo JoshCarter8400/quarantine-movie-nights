@@ -31,3 +31,13 @@ body {
     max-width: 30px;
     max-height: 10px;
 }
+
+.tile-bottom {
+    display: grid;
+    grid-template-columns: repeat(auto-fill, minmax(250px, 1fr));
+    grid-gap: 0.5em;
+}
+
+.card {
+    height: max-content;
+}

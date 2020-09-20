@@ -2,7 +2,7 @@
 <html lang="en-us">
 
 <head>
-    <meta charset="UTF-8"/>
+    <meta charset="UTF-8" />
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/bulma/0.9.0/css/bulma.min.css" integrity="sha512-ADrqa2PY1TZtb/MoLZIZu/Z/LlPaWQeDMBV73EMwjGam43/JJ5fqW38Rq8LJOVGCDfrJeOMS3Q/wRUVzW5DkjQ==" crossorigin="anonymous" />
     <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/5.14.0/css/all.min.css" integrity="sha512-1PKOgIY59xJ8Co8+NE6FZ+LOAZKjy+KY8iq0G4B3CyeY6wYHN3yt9PW0XpSriVlkMXe40PTKnXrLnZ9+fkDaog==" crossorigin="anonymous" />
@@ -10,127 +10,145 @@
     <title>Quarantine Movie Night!</title>
 </head>
 
-    <body>
-        <header>
-            <h1 class="title is-1 has-text-white has-text-centered">Quarantine Movie Night!</h1>
-        </header>
+<body>
+    <header>
+        <h1 class="title is-1 has-text-white has-text-centered">Quarantine Movie Night!</h1>
+    </header>
 
 
-        <div class="tile is-ancestor bg">
-            <div class="tile is-vertical is-8">
-                <div class="tile">
+    <div class="tile is-ancestor bg">
+        <div class="tile is-vertical is-8">
+            <div class="tile">
 
-                    <div class="tile is-parent">
-                        <article class="tile is-child has-text-centered">
+                <div class="tile is-parent">
+                    <article class="tile is-child has-text-centered">
+                        <div class="content">
+                            <p class="title has-text-white">GENRE</p>
                             <div class="content">
-                                <p class="title has-text-white">GENRE</p>
-                                <div class="content">
-                                    <div class="select">
-                                        <select id="genre-dropdown">
-                                            <option>Choose Option</option>
-                                            <option value="35">Comedy</option>
-                                            <option value="28">Action</option>
-                                            <option value="12">Adventure</option>
-                                            <option value="10751">Family</option>
-                                            <option value="18">Drama</option>
-                                            <option value="27">Horror</option>
-                                            <option value="99">Documentary</option>
-                                        </select>
+                                <div class="select">
+                                    <select id="genre-dropdown">
+                                        <option>Choose Option</option>
+                                        <option value="35">Comedy</option>
+                                        <option value="28">Action</option>
+                                        <option value="12">Adventure</option>
+                                        <option value="10751">Family</option>
+                                        <option value="18">Drama</option>
+                                        <option value="27">Horror</option>
+                                        <option value="99">Documentary</option>
+                                    </select>
+                                </div>
+                            </div>
+                        </div>
+                    </article>
+                </div>
+            </div>
+            <div class="tile">
+
+                <div class="tile is-parent">
+                    <article class="tile is-child">
+                        <div class="content">
+                            <p class="title has-text-white">ACTOR</p>
+                            <div class="content">
+                                <div class="field">
+                                    <div class="control">
+                                        <input id="actor-input" class="input is-medium" type="text" placeholder="Type Actor Name Here">
                                     </div>
                                 </div>
                             </div>
-                        </article>
+                    </article>
                     </div>
-                </div>
-                <div class="tile">
-
                     <div class="tile is-parent">
                         <article class="tile is-child">
                             <div class="content">
-                                <p class="title has-text-white">ACTOR</p>
+                                <!--<p class="title has-text-white">Please Click below to see your choices.</p> -->
                                 <div class="content">
-                                    <div class="field">
-                                        <div class="control">
-                                            <input id="actor-input" class="input is-medium" type="text" placeholder="Type Actor Name Here">
-                                        </div>
-                                    </div>
+                                    <button id="search-btn" class="button is-primary">
+                                    <span class="icon">
+                                        <i class="fab fa-twitter"></i>
+                                    </span>
+                                    <span>popcorn submit button goes here</span>
+                                </button>
                                 </div>
-                        </article>
-                        </div>
-                        <div class="tile is-parent">
-                            <article class="tile is-child">
-                                <div class="content">
-                                    <!--<p class="title has-text-white">Please Click below to see your choices.</p> -->
-                                    <div class="content">
-                                        <button id="search-btn" class="button is-primary">
-                                        <span class="icon">
-                                            <i class="fab fa-twitter"></i>
-                                        </span>
-                                        <span>popcorn submit button goes here</span>
-                                    </button>
-                                    </div>
-                                </div>
-                            </article>
                             </div>
-                        <div class="tile is-parent">
-                            <article class="tile is-child">
-                                <div class="content">
-                                    <!--<p class="title has-text-white">streaming list container</p> -->
-                                    <div id="streaming-container" class="content">
-                                        <ul id="wiki-info" class="menu-list"></ul>
-                                    </div>
-                                </div>
-                            </article>
-                        </div>
+                        </article>
                     </div>
-
-                    <div class="tile">
-
-                        <div class="tile is-parent has-text-centered">
-                            <article class="tile is-child ">
+                    <div class="tile is-parent">
+                        <article class="tile is-child">
+                            <div class="content">
+                                <!--<p class="title has-text-white">streaming list container</p> -->
                                 <div class="content">
-                                    <p class="title has-text-white">Please click a card below to add to the Watch List</p>
-                                    <div class="content">
-                                        <ul id="now-playing" class="menu-list"></ul>
-                                    </div>
+                                    <ul class="menu-list"></ul>
                                 </div>
-                            </article>
-                        </div>
+                            </div>
+                        </article>
                     </div>
-
                 </div>
-                <div class="tile is-parent">
-                    <article class="tile is-child">
-                        <p class="title"></p>
-                        <p class="subtitle"></p>
-                        <figure class="image.is-5by4">
-                            <img src="./assets/images/popcorn-bucket.png">
-                        </figure>
-                    </article>
+                <section>
+                    <h1 class="card-header has-text-centered title has-text-white">Please click a card below to add to the Watch List</h1>
+                </section>
+
+                <div class="tile-bottom">
+
+                    <div class="tile is-parent has-text-centered has-background-info">
+                        <article class="tile is-child ">
+                            <div class="content">
+
+                                <div class="card">
+                                    <header class="card-header">
+                                        <p id="movie-title" class="card-header-title"></p>
+
+                                    </header>
+                                    <div class="card-content">
+                                        <div id="wiki-info" class="content"></div>
+
+
+                                    </div>
+                                    <footer class="card-footer">
+                                        <a href="#" class="card-footer-item">Click here to save to watchlist</a>
+                                    </footer>
+                                </div>
+                                <!-- <p class="title has-text-white">Please click a card below to add to the Watch List</p>
+                                <div class="content">
+                                    <ul id="now-playing" class="menu-list"></ul>
+                                </div> -->
+                            </div>
+                        </article>
+                    </div>
                 </div>
 
             </div>
-            <div class="modal">
-                <div class="modal-background"></div>
-                <div class="modal-card">
-                    <section class="modal-card-body">
-                        <p class="modal-card-title has-text-centered is-size-4"></p>
-                        <button id="close-modal-btn" class="modal-close is-large delete" aria-label="close"></button>
-                    </section>
-                </div>
+            <div class="tile is-parent">
+                <article class="tile is-child">
+                    <p class="title"></p>
+                    <p class="subtitle"></p>
+                    <figure class="image.is-5by4">
+                        <img src="./assets/images/popcorn-bucket.png">
+                    </figure>
+                </article>
+            </div>
+
+        </div>
+        <div class="modal">
+            <div class="modal-background"></div>
+            <div class="modal-card">
+                <section class="modal-card-body">
+                    <p class="modal-card-title has-text-centered is-size-4"></p>
+                    <button id="close-modal-btn" class="modal-close is-large delete" aria-label="close"></button>
+                </section>
             </div>
         </div>
-        <footer class="footer">
-            <div>
-                <p>
-                    <strong>This product uses the TMDb API but is not endorsed or certified by TMDb.</strong> <img src="./assets/images/tmdb.svg" alt="TMBD LOGO">
-                </p>
-            </div>
+    </div>
+    <footer class="footer">
+        <div>
+            <p>
+                <strong>This product uses the TMDb API but is not endorsed or certified by TMDb.</strong> <img src="./assets/images/tmdb.svg" alt="TMBD LOGO">
+            </p>
+        </div>
 
-        </footer>
-        <script src="https://cdnjs.cloudflare.com/ajax/libs/jquery/3.5.1/jquery.min.js" integrity="sha512-bLT0Qm9VnAYZDflyKcBaQ2gg0hSYNQrJ8RilYldYQ1FxQYoCLtUjuuRuZo+fjqhx/qtq/1itJ0C2ejDxltZVFg==" crossorigin="anonymous"></script>
-        <script src="https://cdnjs.cloudflare.com/ajax/libs/jqueryui-touch-punch/0.2.3/jquery.ui.touch-punch.min.js" integrity="sha512-0bEtK0USNd96MnO4XhH8jhv3nyRF0eK87pJke6pkYf3cM0uDIhNJy9ltuzqgypoIFXw3JSuiy04tVk4AjpZdZw==" crossorigin="anonymous"></script>
-        <script src="./assets/js/script.js"></script>
-    </body>
+    </footer>
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/jquery/3.5.1/jquery.min.js" integrity="sha512-bLT0Qm9VnAYZDflyKcBaQ2gg0hSYNQrJ8RilYldYQ1FxQYoCLtUjuuRuZo+fjqhx/qtq/1itJ0C2ejDxltZVFg==" crossorigin="anonymous"></script>
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/jqueryui-touch-punch/0.2.3/jquery.ui.touch-punch.min.js" integrity="sha512-0bEtK0USNd96MnO4XhH8jhv3nyRF0eK87pJke6pkYf3cM0uDIhNJy9ltuzqgypoIFXw3JSuiy04tVk4AjpZdZw==" crossorigin="anonymous"></script>
+    <script src="./assets/js/script.js"></script>
+</body>
 
 </html>

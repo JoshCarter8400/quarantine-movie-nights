@@ -77,6 +77,15 @@ function getMovies(options) {
     });
 }
 
+function getWikiInfo(wikiData) {
+    var wikiApi = "http://en.wikipedia.org/w/api.php?action=query&list=search&srsearch=" + encodeURIComponent(wikiData) + "&format=json";
+
+    fetch(wikiApi).then(function(response) {
+        response.json().then(function(data) {
+            console.log(data)
+        })
+    })
+}
 
 function displayMovies(movieData) {
     var movieListEl = document.getElementById("now-playing");
