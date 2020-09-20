@@ -53,7 +53,7 @@ function getMovies(options) {
   
     // add the desired genre and actor to the query string
     // hardcoded genre for now
-    apiUrl += "&with_genres=" + options.genre; //options.genre;
+    apiUrl += "&with_genres=" + options.genre;
     apiUrl += "&with_cast=" + options.actor;
 
     // fetch from the API
