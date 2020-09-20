@@ -15,42 +15,35 @@
             <h1 class="title is-1 has-text-white has-text-centered">Quarantine Movie Nights</h1>
         </header>
 
-        <br>
-        <br>
-
-        <div class="tile is-ancestor bg">
-            <div class="tile is-vertical is-8">
+        <main class="tile is-ancestor bg">
+            <div class="tile is-vertical input-container">
                 <div class="tile">
 
                     <div class="tile is-parent">
                         <article class="tile is-child has-text-centered">
                             <div class="content">
-                                <p class="title has-text-white">GENRE</p>
+                                <h2 class="title has-text-white">GENRE</h2>
                                 <div class="content">
-                                    <div class="select">
-                                        <select id="genre-dropdown">
-                                            <option>Choose Option</option>
-                                            <option value="35">Comedy</option>
-                                            <option value="28">Action</option>
-                                            <option value="12">Adventure</option>
-                                            <option value="10751">Family</option>
-                                            <option value="18">Drama</option>
-                                            <option value="27">Horror</option>
-                                            <option value="99">Documentary</option>
-                                        </select>
-                                    </div>
+                                    <select class="select is-medium" id="genre-dropdown">
+                                        <option>Choose Option</option>
+                                        <option value="35">Comedy</option>
+                                        <option value="28">Action</option>
+                                        <option value="12">Adventure</option>
+                                        <option value="10751">Family</option>
+                                        <option value="18">Drama</option>
+                                        <option value="27">Horror</option>
+                                        <option value="99">Documentary</option>
+                                    </select>
                                 </div>
                             </div>
                         </article>
                     </div>
-                </div>
-                <div class="tile">
 
                     <!-- actor input section -->
                     <div class="tile is-parent">
                         <article class="tile is-child has-text-centered">
                             <div class="content">
-                                <p class="title has-text-white">ACTOR</p>
+                                <h2 class="title has-text-white">ACTOR</h2>
                                 <div class="content">
                                     <div class="field">
                                         <div class="control">
@@ -58,15 +51,19 @@
                                         </div>
                                     </div>
                                 </div>
+                            </div>
                         </article>
                     </div>
 
+                </div>
+                <div class="tile">
+
                     <!-- search button -->
                     <div class="tile is-parent">
-                        <article class="tile is-child">
+                        <div class="tile is-child">
                             <div class="content">
                                 <!--<p class="title has-text-white">Please Click below to see your choices.</p> -->
-                                <div class="content">
+                                <div class="content has-text-centered">
                                     <button id="search-btn" class="button is-primary">
                                         <span class="icon">
                                             <i class="fab fa-twitter"></i>
@@ -75,26 +72,27 @@
                                     </button>
                                 </div>
                             </div>
-                        </article>
+                        </div>
                     </div>
 
-                    <div class="tile is-parent">
+                    <!-- <div class="tile is-parent">
                         <article class="tile is-child">
                             <div class="content">
-                                <!--<p class="title has-text-white">streaming list container</p> -->
+                                <p class="title has-text-white">streaming list container</p>
                                 <div id="streaming-container" class="content">
                                     <ul id="wiki-info" class="menu-list"></ul>
                                 </div>
                             </div>
                         </article>
-                    </div>
+                    </div> -->
                 </div>
 
+                <!-- search results -->
                 <div class="tile">
                     <div class="tile is-parent has-text-centered">
                         <article class="tile is-child ">
                             <div class="content">
-                                <p class="title has-text-white">Please click a card below to add to the Watch List</p>
+                                <h2 class="title has-text-white">Please click a card below to add to the Watch List</h2>
                                 <div class="content">
                                     <ul id="now-playing" class="menu-list"></ul>
                                 </div>
@@ -103,17 +101,23 @@
                     </div>
                 </div>
             </div>
-            <div class="tile is-parent">
-                <article class="tile is-child">
-                    <p class="title"></p>
-                    <p class="subtitle"></p>
-                    <figure class="image.is-5by4">
-                        <img src="./assets/images/popcorn-bucket.png">
+
+            <!-- saved movies -->
+            <div class="tile is-parent saved-movies-bucket">
+                <article class="tile is-child has-text-centered">
+                    <figure id="popcorn-bucket" class="image.is-5by4">
+                        <img class="is-centered" src="./assets/images/popcorn-bucket.png" alt="popcorn bucket" />
+                        <figcaption>
+                            <div class="saved-watch-list-container">
+                                <h2 class="title has-text-white">Saved Watch List</h2>
+                                <div id="saved-movies"></div>
+                            </div>
+                        </figcaption>
                     </figure>
                 </article>
             </div>
 
-        </div>
+        </main>
 
         <!-- footer -->
         <footer class="footer">

@@ -21,6 +21,15 @@ body {
     padding: 20px;
 }
 
+body > header{
+    margin-bottom: 2em;
+}
+
+main{
+    max-width: 1680px;
+    margin: 0 auto!important;
+}
+
 .center {
     display: flex;
     justify-content: center;
@@ -33,11 +42,41 @@ body {
     list-style: none;
 }
 
+select{
+    width: 100%;
+}
+
+.input{
+    border-radius: 0;
+}
+
 .footer {
     padding: 1rem 1.5rem 1rem;
 }
 
 .footer img {
-    max-width: 30px;
-    max-height: 10px;
+    height: 1em;
+}
+
+#popcorn-bucket{
+    position: relative;
+}
+
+#popcorn-bucket img{
+    width: 100%;
+}
+
+#popcorn-bucket figcaption{
+    position: absolute;
+    bottom: 0;
+    height: 60%;
+    width: 100%;
+}
+
+.saved-watch-list-container{
+    width: 60%;
+    height: 80%;
+    overflow-y: auto;
+    margin: 0 auto;
+    background-color: #fff;
 }
