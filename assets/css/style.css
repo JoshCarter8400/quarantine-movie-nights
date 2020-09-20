@@ -10,6 +10,10 @@ html {
     background-size: cover;
 }
 
+header {
+    padding: 20px;
+}
+
 body {
     margin: auto;
     padding: 20px;
