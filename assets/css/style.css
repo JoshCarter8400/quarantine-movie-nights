@@ -14,3 +14,6 @@ body {
 .menu-list li {
     list-style: none;
 }
+.footer img {
+    max-width: 30px;
+}
