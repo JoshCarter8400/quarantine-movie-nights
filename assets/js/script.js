@@ -2,8 +2,6 @@ var popcornBtn = document.querySelector("#search-btn");
 var searchGenre = document.querySelector("#genre-dropdown");
 var actorInput = document.querySelector("#actor-input");
 
-
-
 var getPersonId = function(actor) {
 
 
@@ -20,7 +18,6 @@ var getPersonId = function(actor) {
             var searchOption = {
                 actor: data.results[0].id,
                 genre: $("#genre-dropdown").val().trim()
-
             }
             getMovies(searchOption);
 
@@ -34,7 +31,7 @@ var getPersonId = function(actor) {
 };
 
 var searchHandler = function(event) {
-    var searchGenre = document.querySelector("#genre-dropdown");
+    var searchGenre = document.getElementById("genre-dropdown");
     var actorInput = document.querySelector("#actor-input");
 
     var actor = actorInput.value.trim();
@@ -48,14 +45,15 @@ var searchHandler = function(event) {
 };
 
 
-
 // options should be an object with genre and actor properties
 function getMovies(options) {
+    
+    
     var apiUrl = "https://api.themoviedb.org/3/discover/movie?api_key=0bd9398a9daad70a50c685a4f8c0a74b&language=en-US&sort_by=popularity.desc&include_adult=false&include_video=false&page=1";
-
+  
     // add the desired genre and actor to the query string
     // hardcoded genre for now
-    apiUrl += "&with_genres=" + "27"; //options.genre;
+    apiUrl += "&with_genres=" + options.genre; //options.genre;
     apiUrl += "&with_cast=" + options.actor;
 
     // fetch from the API
