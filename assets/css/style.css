@@ -69,20 +69,25 @@ select {
 #popcorn-bucket figcaption {
     position: absolute;
     bottom: 0;
-    height: 60%;
+    height: 50%; /* adjusting height here changes how far the box is from the top of the image */
     width: 100%;
+    padding-left: 10%;
+}
+
+#popcorn-bucket .title{
+    font-size: 1.5rem;
 }
 
 .saved-watch-list-container {
-    width: 60%;
-    height: 80%;
+    width: 50%;
+    height: 70%; /* adjusting height here changes how far the box is from the bottom of the image */
     overflow-y: auto;
     margin: 0 auto;
     background-color: #fff;
 }
 
 
-/* Wikipedia Cards */
+/* Movie Cards */
 
 .card-grid {
     display: grid;
@@ -90,6 +95,19 @@ select {
     grid-gap: 0.5em;
 }
 
-.card {
-    height: max-content;
+.card-grid .card-header-title{
+    color: #fff;
+}
+
+.card-grid a{
+    color: #8cbcff;
+    font-weight: bold;
+}
+
+.card-grid .card{
+    display: flex;
+    flex-direction: column;
+    justify-content: space-between;
+    background-color: rgba(255, 255, 255, 0.3);
+    color: #fff;
 }
