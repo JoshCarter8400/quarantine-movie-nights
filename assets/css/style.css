@@ -1,3 +1,7 @@
+* {
+    box-sizing: border-box;
+}
+
 html {
     background: url(../images/background-image.jpg) no-repeat center center fixed;
     -webkit-background-size: cover;
@@ -8,7 +12,7 @@ html {
 
 body {
     margin: auto;
-    padding: 0;
+    padding: 20px;
 }
 
 .center {
