@@ -2,15 +2,15 @@ var popcornBtn = document.querySelector("#search-btn");
 var searchGenre = document.querySelector("#genre-dropdown");
 var actorInput = document.querySelector("#actor-input");
 
-var getPersonId = function(actor) {
+var getPersonId = function (actor) {
 
 
     var apiUrl =
         "https://api.themoviedb.org/3/search/person?api_key=0bd9398a9daad70a50c685a4f8c0a74b&language=en-US&query=" + encodeURIComponent(actor) + "&page=1&include_adult=false";
 
 
-    fetch(apiUrl).then(function(response) {
-        response.json().then(function(data) {
+    fetch(apiUrl).then(function (response) {
+        response.json().then(function (data) {
             if (data.results.length === 0) {
                 displayError("No matches found for " + actorInput.value + ".");
                 return;
@@ -30,7 +30,7 @@ var getPersonId = function(actor) {
 
 };
 
-var searchHandler = function(event) {
+var searchHandler = function (event) {
     var searchGenre = document.getElementById("genre-dropdown");
     var actorInput = document.querySelector("#actor-input");
 
@@ -41,6 +41,7 @@ var searchHandler = function(event) {
         return;
     }
 
+    document.getElementById("now-playing").innerHTML = "";
     getPersonId(actor);
 };
 
@@ -57,49 +58,70 @@ function getMovies(options) {
     apiUrl += "&with_cast=" + options.actor;
 
     // fetch from the API
-    fetch(apiUrl).then(function(response) {
+    fetch(apiUrl).then(function (response) {
         if (response.ok) {
-            response.json().then(function(data) {
+            response.json().then(function (data) {
                 // data.results will be an array of movie info
                 if (data.results.length === 0) {
                     displayError("No matches found for " + searchGenre.selectedOptions[0].innerHTML + " movies with " + actorInput.value + ".");
                     return;
                 }
-                displayMovies(data.results);
+                for (var i = 0; i < data.results.length; i++) {
+                    getImdbId(data.results[i].id);
+                }
 
             });
         } else {
             displayError("Error: " + response.statusText);
         }
 
-    }).catch(function(error) {
+    }).catch(function (error) {
         displayError("Unable to connect to TMDb");
     });
 }
 
 
-function displayMovies(movieData) {
-    var movieListEl = document.getElementById("now-playing");
-    var tempHtml = "";
+function getImdbId(tmdbId) {
+    var apiUrl = "https://api.themoviedb.org/3/movie/" + tmdbId + "/external_ids?api_key=0bd9398a9daad70a50c685a4f8c0a74b";
 
-    for (var i = 0; i < movieData.length; i++) {
-        tempHtml += "<li class='is-size-4 has-text-white' data-movie-id='" + movieData[i].id + "'>" + movieData[i].title;
-        tempHtml += " <span class='icon has-text-info is-medium'><i class='fas fa-lg fa-plus-square'></i></span></li>";
-    }
+    // fetch from the API
+    fetch(apiUrl).then(function (response) {
+        if (response.ok) {
+            response.json().then(function (data) {
+                getMovieInfo(data.imdb_id);
+            });
+        } else {
+            displayError("Error: " + response.statusText);
+        }
 
-    movieListEl.innerHTML = tempHtml;
+    }).catch(function (error) {
+        displayError("Unable to connect to TMDb");
+    });
 }
 
-function getPlotInfo(imdbId) {
+
+function getMovieInfo(imdbId) {
     var plotApi = "http://www.omdbapi.com/?apikey=3797140b&i=" + imdbId
 
-    fetch(plotApi).then(function(response) {
-        response.json().then(function(data) {
-            var plot = data.Plot
-            console.log(plot)
+    fetch(plotApi).then(function (response) {
+        response.json().then(function (data) {
+            displayMovie(data);
         })
     })
 }
+
+
+function displayMovie(movieData) {
+    var movieListEl = document.getElementById("now-playing");
+    var tempHtml = "<div class='card'><header class='card-header'>";
+    tempHtml += "<p class='card-header-title movie-title'>" + movieData.Title + "</p>";
+    tempHtml += "</header><div class='card-content'><div class='content movie-summary'>";
+    tempHtml += movieData.Plot;
+    tempHtml += "</div ></div > <footer class='card-footer'><a href='#' class='card-footer-item'>Click here to save to Watch List</a></footer></div > ";
+
+    movieListEl.innerHTML += tempHtml;
+}
+
 
 function displayError(errMsg) {
     $(".modal-card-title").text(errMsg);
@@ -109,7 +131,7 @@ function displayError(errMsg) {
 
 popcornBtn.addEventListener("click", searchHandler);
 // this allows the user to search by using the enter button instead of just the search button click event
-actorInput.addEventListener("keyup", function(event) {
+actorInput.addEventListener("keyup", function (event) {
     // Number 13 is the "Enter" key on the keyboard
     if (event.keyCode === 13) {
         searchHandler(event);
@@ -117,9 +139,9 @@ actorInput.addEventListener("keyup", function(event) {
 })
 
 
-$("#close-modal-btn").click(function() {
+$("#close-modal-btn").click(function () {
     $(".modal").removeClass("is-active");
 });
-$(".modal-background").click(function() {
+$(".modal-background").click(function () {
     $(".modal").removeClass("is-active");
 });
