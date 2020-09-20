@@ -21,11 +21,11 @@ body {
     padding: 20px;
 }
 
-body > header{
+body>header {
     margin-bottom: 2em;
 }
 
-main{
+main {
     max-width: 1680px;
     margin: 0 auto!important;
 }
@@ -42,11 +42,11 @@ main{
     list-style: none;
 }
 
-select{
+select {
     width: 100%;
 }
 
-.input{
+.input {
     border-radius: 0;
 }
 
@@ -58,25 +58,38 @@ select{
     height: 1em;
 }
 
-#popcorn-bucket{
+#popcorn-bucket {
     position: relative;
 }
 
-#popcorn-bucket img{
+#popcorn-bucket img {
     width: 100%;
 }
 
-#popcorn-bucket figcaption{
+#popcorn-bucket figcaption {
     position: absolute;
     bottom: 0;
     height: 60%;
     width: 100%;
 }
 
-.saved-watch-list-container{
+.saved-watch-list-container {
     width: 60%;
     height: 80%;
     overflow-y: auto;
     margin: 0 auto;
     background-color: #fff;
+}
+
+
+/* Wikipedia Cards */
+
+.card-grid {
+    display: grid;
+    grid-template-columns: repeat(auto-fill, minmax(250px, 1fr));
+    grid-gap: 0.5em;
+}
+
+.card {
+    height: max-content;
 }

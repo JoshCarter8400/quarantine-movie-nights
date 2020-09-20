@@ -1,81 +1,81 @@
 <!DOCTYPE html>
 <html lang="en-us">
 
-    <head>
-        <meta charset="UTF-8" />
-        <meta name="viewport" content="width=device-width, initial-scale=1.0">
-        <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/bulma/0.9.0/css/bulma.min.css" integrity="sha512-ADrqa2PY1TZtb/MoLZIZu/Z/LlPaWQeDMBV73EMwjGam43/JJ5fqW38Rq8LJOVGCDfrJeOMS3Q/wRUVzW5DkjQ==" crossorigin="anonymous" />
-        <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/5.14.0/css/all.min.css" integrity="sha512-1PKOgIY59xJ8Co8+NE6FZ+LOAZKjy+KY8iq0G4B3CyeY6wYHN3yt9PW0XpSriVlkMXe40PTKnXrLnZ9+fkDaog==" crossorigin="anonymous" />
-        <link rel="stylesheet" href="./assets/css/style.css">
-        <title>Quarantine Movie Nights</title>
-    </head>
+<head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/bulma/0.9.0/css/bulma.min.css" integrity="sha512-ADrqa2PY1TZtb/MoLZIZu/Z/LlPaWQeDMBV73EMwjGam43/JJ5fqW38Rq8LJOVGCDfrJeOMS3Q/wRUVzW5DkjQ==" crossorigin="anonymous" />
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/5.14.0/css/all.min.css" integrity="sha512-1PKOgIY59xJ8Co8+NE6FZ+LOAZKjy+KY8iq0G4B3CyeY6wYHN3yt9PW0XpSriVlkMXe40PTKnXrLnZ9+fkDaog==" crossorigin="anonymous" />
+    <link rel="stylesheet" href="./assets/css/style.css">
+    <title>Quarantine Movie Nights</title>
+</head>
 
-    <body>
-        <header>
-            <h1 class="title is-1 has-text-white has-text-centered">Quarantine Movie Nights</h1>
-        </header>
+<body>
+    <header>
+        <h1 class="title is-1 has-text-white has-text-centered">Quarantine Movie Nights</h1>
+    </header>
 
-        <main class="tile is-ancestor bg">
-            <div class="tile is-vertical input-container">
-                <div class="tile">
+    <main class="tile is-ancestor bg">
+        <div class="tile is-vertical input-container">
+            <div class="tile">
 
-                    <div class="tile is-parent">
-                        <article class="tile is-child has-text-centered">
+                <div class="tile is-parent">
+                    <article class="tile is-child has-text-centered">
+                        <div class="content">
+                            <h2 class="title has-text-white">GENRE</h2>
                             <div class="content">
-                                <h2 class="title has-text-white">GENRE</h2>
-                                <div class="content">
-                                    <select class="select is-medium" id="genre-dropdown">
-                                        <option>Choose Option</option>
-                                        <option value="35">Comedy</option>
-                                        <option value="28">Action</option>
-                                        <option value="12">Adventure</option>
-                                        <option value="10751">Family</option>
-                                        <option value="18">Drama</option>
-                                        <option value="27">Horror</option>
-                                        <option value="99">Documentary</option>
-                                    </select>
-                                </div>
+                                <select class="select is-medium" id="genre-dropdown">
+                                    <option>Choose Option</option>
+                                    <option value="35">Comedy</option>
+                                    <option value="28">Action</option>
+                                    <option value="12">Adventure</option>
+                                    <option value="10751">Family</option>
+                                    <option value="18">Drama</option>
+                                    <option value="27">Horror</option>
+                                    <option value="99">Documentary</option>
+                                </select>
                             </div>
-                        </article>
-                    </div>
+                        </div>
+                    </article>
+                </div>
 
-                    <!-- actor input section -->
-                    <div class="tile is-parent">
-                        <article class="tile is-child has-text-centered">
+                <!-- actor input section -->
+                <div class="tile is-parent">
+                    <article class="tile is-child has-text-centered">
+                        <div class="content">
+                            <h2 class="title has-text-white">ACTOR</h2>
                             <div class="content">
-                                <h2 class="title has-text-white">ACTOR</h2>
-                                <div class="content">
-                                    <div class="field">
-                                        <div class="control">
-                                            <input id="actor-input" class="input is-medium" type="text" placeholder="Type Actor Name Here">
-                                        </div>
+                                <div class="field">
+                                    <div class="control">
+                                        <input id="actor-input" class="input is-medium" type="text" placeholder="Type Actor Name Here">
                                     </div>
                                 </div>
                             </div>
-                        </article>
-                    </div>
-
+                        </div>
+                    </article>
                 </div>
-                <div class="tile">
 
-                    <!-- search button -->
-                    <div class="tile is-parent">
-                        <div class="tile is-child">
-                            <div class="content">
-                                <!--<p class="title has-text-white">Please Click below to see your choices.</p> -->
-                                <div class="content has-text-centered">
-                                    <button id="search-btn" class="button is-primary">
-                                        <span class="icon">
-                                            <i class="fab fa-twitter"></i>
-                                        </span>
-                                        <span>popcorn submit button goes here</span>
-                                    </button>
-                                </div>
+            </div>
+            <div class="tile">
+
+                <!-- search button -->
+                <div class="tile is-parent">
+                    <div class="tile is-child">
+                        <div class="content">
+                            <!--<p class="title has-text-white">Please Click below to see your choices.</p> -->
+                            <div class="content has-text-centered">
+                                <button id="search-btn" class="button is-primary">
+                                    <span class="icon">
+                                        <i class="fab fa-twitter"></i>
+                                    </span>
+                                    <span>popcorn submit button goes here</span>
+                                </button>
                             </div>
                         </div>
                     </div>
+                </div>
 
-                    <!-- <div class="tile is-parent">
+                <!-- <div class="tile is-parent">
                         <article class="tile is-child">
                             <div class="content">
                                 <p class="title has-text-white">streaming list container</p>
@@ -85,64 +85,77 @@
                             </div>
                         </article>
                     </div> -->
-                </div>
+            </div>
 
-                <!-- search results -->
-                <div class="tile">
-                    <div class="tile is-parent has-text-centered">
-                        <article class="tile is-child ">
-                            <div class="content">
-                                <h2 class="title has-text-white">Please click a card below to add to the Watch List</h2>
-                                <div class="content">
-                                    <ul id="now-playing" class="menu-list"></ul>
+            <!-- search results -->
+            <div class="tile">
+                <div class="tile is-parent has-text-centered">
+                    <article class="tile is-child ">
+                        <div class="content">
+                            <h2 class="title has-text-white">Please click a card below to add to the Watch List</h2>
+                            <div class="content card-grid">
+                                <div class="card">
+                                    <header class="card-header">
+                                        <p class="card-header-title movie-title"></p>
+                                    </header>
+                                    <div class="card-content">
+                                        <div class="content wiki-info"></div>
+                                    </div>
+                                    <footer class="card-footer">
+                                        <a href="#" class="card-footer-item">Click here to save to watchlist</a>
+                                    </footer>
                                 </div>
                             </div>
-                        </article>
-                    </div>
+                        </div>
+                    </article>
                 </div>
-            </div>
-
-            <!-- saved movies -->
-            <div class="tile is-parent saved-movies-bucket">
-                <article class="tile is-child has-text-centered">
-                    <figure id="popcorn-bucket" class="image.is-5by4">
-                        <img class="is-centered" src="./assets/images/popcorn-bucket.png" alt="popcorn bucket" />
-                        <figcaption>
-                            <div class="saved-watch-list-container">
-                                <h2 class="title has-text-white">Saved Watch List</h2>
-                                <div id="saved-movies"></div>
-                            </div>
-                        </figcaption>
-                    </figure>
-                </article>
-            </div>
-
-        </main>
-
-        <!-- footer -->
-        <footer class="footer">
-            <div>
-                <p>
-                    <img src="./assets/images/tmdb.svg" alt="TMBD LOGO" /> <strong>This product uses the TMDb API but is not endorsed or certified by TMDb.</strong>
-                </p>
-            </div>
-        </footer>
-
-        <!-- modal -->
-        <div class="modal">
-            <div class="modal-background"></div>
-            <div class="modal-card">
-                <section class="modal-card-body">
-                    <p class="modal-card-title has-text-centered is-size-4"></p>
-                    <button id="close-modal-btn" class="modal-close is-large delete" aria-label="close"></button>
-                </section>
             </div>
         </div>
 
 
-        <script src="https://cdnjs.cloudflare.com/ajax/libs/jquery/3.5.1/jquery.min.js" integrity="sha512-bLT0Qm9VnAYZDflyKcBaQ2gg0hSYNQrJ8RilYldYQ1FxQYoCLtUjuuRuZo+fjqhx/qtq/1itJ0C2ejDxltZVFg==" crossorigin="anonymous"></script>
-        <script src="https://cdnjs.cloudflare.com/ajax/libs/jqueryui-touch-punch/0.2.3/jquery.ui.touch-punch.min.js" integrity="sha512-0bEtK0USNd96MnO4XhH8jhv3nyRF0eK87pJke6pkYf3cM0uDIhNJy9ltuzqgypoIFXw3JSuiy04tVk4AjpZdZw==" crossorigin="anonymous"></script>
-        <script src="./assets/js/script.js"></script>
-    </body>
+
+        <!-- saved movies -->
+        <div class="tile is-parent saved-movies-bucket">
+            <article class="tile is-child has-text-centered">
+                <figure id="popcorn-bucket" class="image.is-5by4">
+                    <img class="is-centered" src="./assets/images/popcorn-bucket.png" alt="popcorn bucket" />
+                    <figcaption>
+                        <div class="saved-watch-list-container">
+                            <h2 class="title has-text-white">Saved Watch List</h2>
+                            <div id="saved-movies"></div>
+                        </div>
+                    </figcaption>
+                </figure>
+            </article>
+        </div>
+
+    </main>
+
+    <!-- footer -->
+    <footer class="footer">
+        <div>
+            <p>
+                <img src="./assets/images/tmdb.svg" alt="TMBD LOGO" /> <strong>This product uses the TMDb API but is not
+                    endorsed or certified by TMDb.</strong>
+            </p>
+        </div>
+    </footer>
+
+    <!-- modal -->
+    <div class="modal">
+        <div class="modal-background"></div>
+        <div class="modal-card">
+            <section class="modal-card-body">
+                <p class="modal-card-title has-text-centered is-size-4"></p>
+                <button id="close-modal-btn" class="modal-close is-large delete" aria-label="close"></button>
+            </section>
+        </div>
+    </div>
+
+
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/jquery/3.5.1/jquery.min.js" integrity="sha512-bLT0Qm9VnAYZDflyKcBaQ2gg0hSYNQrJ8RilYldYQ1FxQYoCLtUjuuRuZo+fjqhx/qtq/1itJ0C2ejDxltZVFg==" crossorigin="anonymous"></script>
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/jqueryui-touch-punch/0.2.3/jquery.ui.touch-punch.min.js" integrity="sha512-0bEtK0USNd96MnO4XhH8jhv3nyRF0eK87pJke6pkYf3cM0uDIhNJy9ltuzqgypoIFXw3JSuiy04tVk4AjpZdZw==" crossorigin="anonymous"></script>
+    <script src="./assets/js/script.js"></script>
+</body>
 
 </html>

@@ -90,6 +90,16 @@ function displayMovies(movieData) {
     movieListEl.innerHTML = tempHtml;
 }
 
+function getPlotInfo(imdbId) {
+    var plotApi = "http://www.omdbapi.com/?apikey=3797140b&i=" + imdbId
+
+    fetch(plotApi).then(function(response) {
+        response.json().then(function(data) {
+            var plot = data.Plot
+            console.log(plot)
+        })
+    })
+}
 
 function displayError(errMsg) {
     $(".modal-card-title").text(errMsg);
