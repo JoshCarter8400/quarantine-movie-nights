@@ -47,10 +47,10 @@ var searchHandler = function(event) {
 
 // options should be an object with genre and actor properties
 function getMovies(options) {
-    
-    
+
+
     var apiUrl = "https://api.themoviedb.org/3/discover/movie?api_key=0bd9398a9daad70a50c685a4f8c0a74b&language=en-US&sort_by=popularity.desc&include_adult=false&include_video=false&page=1";
-  
+
     // add the desired genre and actor to the query string
     // hardcoded genre for now
     apiUrl += "&with_genres=" + options.genre;
@@ -83,7 +83,7 @@ function displayMovies(movieData) {
     var tempHtml = "";
 
     for (var i = 0; i < movieData.length; i++) {
-        tempHtml += "<li class='is-size-4' data-movie-id='" + movieData[i].id + "'>" + movieData[i].title;
+        tempHtml += "<li class='is-size-4 has-text-white' data-movie-id='" + movieData[i].id + "'>" + movieData[i].title;
         tempHtml += " <span class='icon has-text-info is-medium'><i class='fas fa-lg fa-plus-square'></i></span></li>";
     }
 
