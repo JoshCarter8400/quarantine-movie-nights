@@ -1,7 +1,11 @@
 var popcornBtn = document.querySelector("#search-btn");
 var searchGenre = document.querySelector("#genre-dropdown");
 var actorInput = document.querySelector("#actor-input");
+var savedFilms = {};
 
+var saveMovies = function(){
+    localStorage.setItem("savedFilms" , JSON.stringify(savedFilms));
+};
 var getPersonId = function (actor) {
 
 
@@ -114,13 +118,22 @@ function getMovieInfo(imdbId) {
 function displayMovie(movieData) {
     var movieListEl = document.getElementById("now-playing");
     var tempHtml = "<div class='card'><header class='card-header'>";
-    tempHtml += "<p class='card-header-title movie-title'>" + movieData.Title + "</p>";
+    tempHtml += "<p class='card-header-title movie-title' id='title'>" + movieData.Title + "</p>";
     tempHtml += "</header><div class='card-content'><div class='content movie-summary'>";
     tempHtml += movieData.Plot;
-    tempHtml += "</div ></div > <footer class='card-footer'><a href='#' class='card-footer-item'>Click here to save to Watch List</a></footer></div > ";
+    tempHtml += "</div ></div > <footer class='card-footer'><button id='watch-list' class='button is-dark'>Click to add to watch list</button></footer></div > ";
 
     movieListEl.innerHTML += tempHtml;
+ 
+    watchListBtn.addEventListener("click", addMovie);
+
 }
+
+var addMovie = function(event){
+    savedMovies = document.querySelector("#saved-movies");
+    title = document.querySelector("#title").innerHTML;
+    savedMovies.appendChild(title);
+};
 
 
 function displayError(errMsg) {

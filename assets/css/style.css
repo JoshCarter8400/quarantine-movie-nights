@@ -50,6 +50,10 @@ select {
     border-radius: 0;
 }
 
+.popcorn{
+    height: 150px;
+}
+
 
 .footer {
     padding: 1rem 1.5rem 1rem;
