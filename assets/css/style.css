@@ -1,3 +1,9 @@
+* {
+    box-sizing: border-box;
+    margin: 0;
+    padding: 0;
+}
+
 html {
     background: url(../images/background-image.jpg) no-repeat center center fixed;
     -webkit-background-size: cover;
@@ -12,7 +18,16 @@ header {
 
 body {
     margin: auto;
-    padding: 0;
+    padding: 20px;
+}
+
+body>header {
+    margin-bottom: 2em;
+}
+
+main {
+    max-width: 1680px;
+    margin: 0 auto!important;
 }
 
 .center {
@@ -27,21 +42,77 @@ body {
     list-style: none;
 }
 
+select {
+    width: 100%;
+}
+
+.input {
+    border-radius: 0;
+}
+
+.popcorn{
+    height: 150px;
+}
+
+
 .footer {
     padding: 1rem 1.5rem 1rem;
 }
 
 .footer img {
-    max-width: 30px;
-    max-height: 10px;
+    height: 1em;
 }
 
-.tile-bottom {
+#popcorn-bucket {
+    position: relative;
+}
+
+#popcorn-bucket img {
+    width: 100%;
+}
+
+#popcorn-bucket figcaption {
+    position: absolute;
+    bottom: 0;
+    height: 50%; /* adjusting height here changes how far the box is from the top of the image */
+    width: 100%;
+    padding-left: 10%;
+}
+
+#popcorn-bucket .title{
+    font-size: 1.5rem;
+}
+
+.saved-watch-list-container {
+    width: 50%;
+    height: 70%; /* adjusting height here changes how far the box is from the bottom of the image */
+    overflow-y: auto;
+    margin: 0 auto;
+    background-color: #fff;
+}
+
+
+/* Movie Cards */
+
+.card-grid {
     display: grid;
     grid-template-columns: repeat(auto-fill, minmax(250px, 1fr));
     grid-gap: 0.5em;
 }
 
-.card {
-    height: max-content;
+.card-grid .card-header-title{
+    color: #fff;
+}
+
+.card-grid a{
+    color: #8cbcff;
+    font-weight: bold;
+}
+
+.card-grid .card{
+    display: flex;
+    flex-direction: column;
+    justify-content: space-between;
+    background-color: rgba(255, 255, 255, 0.3);
+    color: #fff;
 }
