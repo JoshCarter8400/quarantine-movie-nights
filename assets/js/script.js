@@ -131,8 +131,8 @@ var addMovie = function(){
     title = document.querySelector("#title");
     let newTitle = document.createElement("li");
     newTitle = title;
-    savedMovies.appendChild(title);
-    saveInfo();
+   $(title).clone().appendTo(savedMovies);
+    
 };
 watchListBtn.addEventListener("click", addMovie);
 
