@@ -1,10 +1,11 @@
 var popcornBtn = document.querySelector("#search-btn");
 var searchGenre = document.querySelector("#genre-dropdown");
 var actorInput = document.querySelector("#actor-input");
-var savedFilms = {};
+var watchListBtn = document
+var savedMovies = [];
 
-var saveMovies = function(){
-    localStorage.setItem("savedFilms" , JSON.stringify(savedFilms));
+var saveInfo = function(){
+    localStorage.setItem("savedMovies" , JSON.stringify(savedMovies));
 };
 var getPersonId = function (actor) {
 
@@ -125,21 +126,26 @@ function displayMovie(movieData) {
 
     movieListEl.innerHTML += tempHtml;
  
-    watchListBtn.addEventListener("click", addMovie);
+var addMovie = function(){
+    savedMovies = document.querySelector("#saved-movies");
+    title = document.querySelector("#title");
+    let newTitle = document.createElement("li");
+    newTitle = title;
+    savedMovies.appendChild(title);
+    saveInfo();
+};
+watchListBtn.addEventListener("click", addMovie);
 
 }
 
-var addMovie = function(event){
-    savedMovies = document.querySelector("#saved-movies");
-    title = document.querySelector("#title").innerHTML;
-    savedMovies.appendChild(title);
-};
+
 
 
 function displayError(errMsg) {
     $(".modal-card-title").text(errMsg);
     $(".modal").addClass("is-active is-clipped");
 }
+saveInfo();
 
 
 popcornBtn.addEventListener("click", searchHandler);
