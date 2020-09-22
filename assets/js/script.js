@@ -125,14 +125,14 @@ function displayMovie(movieData) {
     tempHtml += "</div ></div > <footer class='card-footer'><button id='watch-list' class='button is-dark'>Click to add to watch list</button></footer></div > ";
 
     movieListEl.innerHTML += tempHtml;
- 
+
 var addMovie = function(){
     savedMovies = document.querySelector("#saved-movies");
     title = document.querySelector("#title");
     let newTitle = document.createElement("li");
     newTitle = title;
    $(title).clone().appendTo(savedMovies);
-    
+
 };
 watchListBtn.addEventListener("click", addMovie);
 
