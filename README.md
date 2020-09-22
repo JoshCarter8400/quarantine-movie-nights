@@ -7,7 +7,7 @@ The app will also save a "Watch List" for any movies selected within the app.
 
 ## Webpage
 https://joshcarter8400.github.io/Group-Project-1/
-
+![](assets/images/webpage.png)
 ## Contributors
 - Josh Carter
 - Chris Southwick
