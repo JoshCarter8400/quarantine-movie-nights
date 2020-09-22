@@ -3,41 +3,9 @@ var searchGenre = document.querySelector("#genre-dropdown");
 var actorInput = document.querySelector("#actor-input");
 var savedFilms = {};
 
-var saveMovies = function(){
-    localStorage.setItem("savedFilms" , JSON.stringify(savedFilms));
-};
-var getPersonId = function (actor) {
 
-
-    var apiUrl =
-        "https://api.themoviedb.org/3/search/person?api_key=0bd9398a9daad70a50c685a4f8c0a74b&language=en-US&query=" + encodeURIComponent(actor) + "&page=1&include_adult=false";
-
-
-    fetch(apiUrl).then(function (response) {
-        response.json().then(function (data) {
-            if (data.results.length === 0) {
-                displayError("No matches found for " + actorInput.value + ".");
-                return;
-            }
-            var searchOption = {
-                actor: data.results[0].id,
-                genre: $("#genre-dropdown").val().trim()
-            }
-            getMovies(searchOption);
-
-        });
-
-    });
-
-
-
-
-};
-
-var searchHandler = function (event) {
-    var searchGenre = document.getElementById("genre-dropdown");
+var searchHandler = function () {
     var actorInput = document.querySelector("#actor-input");
-
     var actor = actorInput.value.trim();
 
     if (!actor) {
@@ -50,14 +18,32 @@ var searchHandler = function (event) {
 };
 
 
+var getPersonId = function (actor) {
+    var apiUrl = "https://api.themoviedb.org/3/search/person?api_key=0bd9398a9daad70a50c685a4f8c0a74b";
+    apiUrl += "&language=en-US&page=1&include_adult=false&query=" + encodeURIComponent(actor);
+
+    fetch(apiUrl).then(function (response) {
+        response.json().then(function (data) {
+            if (data.results.length === 0) {
+                displayError("No matches found for " + actorInput.value + ".");
+                return;
+            }
+            var searchOption = {
+                actor: data.results[0].id,
+                genre: $("#genre-dropdown").val()
+            }
+            getMovies(searchOption);
+        });
+    });
+};
+
+
 // options should be an object with genre and actor properties
 function getMovies(options) {
-
-
-    var apiUrl = "https://api.themoviedb.org/3/discover/movie?api_key=0bd9398a9daad70a50c685a4f8c0a74b&language=en-US&sort_by=popularity.desc&include_adult=false&include_video=false&page=1";
+    var apiUrl = "https://api.themoviedb.org/3/discover/movie?api_key=0bd9398a9daad70a50c685a4f8c0a74b";
+    apiUrl += "&language=en-US&sort_by=popularity.desc&include_adult=false&include_video=false&page=1";
 
     // add the desired genre and actor to the query string
-    // hardcoded genre for now
     apiUrl += "&with_genres=" + options.genre;
     apiUrl += "&with_cast=" + options.actor;
 
@@ -121,7 +107,7 @@ function displayMovie(movieData) {
     tempHtml += "<p class='card-header-title movie-title' id='title'>" + movieData.Title + "</p>";
     tempHtml += "</header><div class='card-content'><div class='content movie-summary'>";
     tempHtml += movieData.Plot;
-    tempHtml += "</div ></div > <footer class='card-footer'><button id='watch-list' class='button is-dark'>Click to add to watch list</button></footer></div > ";
+    tempHtml += "</div></div><footer class='card-footer'><a href='#' class='card-footer-item'>Click here to save to Watch List</a></footer></div>";
 
     movieListEl.innerHTML += tempHtml;
  
@@ -147,7 +133,7 @@ popcornBtn.addEventListener("click", searchHandler);
 actorInput.addEventListener("keyup", function (event) {
     // Number 13 is the "Enter" key on the keyboard
     if (event.keyCode === 13) {
-        searchHandler(event);
+        searchHandler();
     }
 })
 

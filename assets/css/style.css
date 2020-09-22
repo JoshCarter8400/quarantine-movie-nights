@@ -57,6 +57,7 @@ select {
 
 .footer {
     padding: 1rem 1.5rem 1rem;
+    text-align: center;
 }
 
 .footer img {
