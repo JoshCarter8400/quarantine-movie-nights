@@ -24,6 +24,7 @@ CSS
 Javascript
 Local Storage
 CSS Framework - Bulma
+AJAX
 APIS - TMDb & OMDb https://developers.themoviedb.org ; http://www.omdbapi.com/apikey.aspx
 GitHub
 Photoshop
