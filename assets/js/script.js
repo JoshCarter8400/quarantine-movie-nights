@@ -1,8 +1,11 @@
+// Global Variables
 var popcornBtn = document.querySelector("#search-btn");
 var searchGenre = document.querySelector("#genre-dropdown");
 var actorInput = document.querySelector("#actor-input");
 var savedMoviesEl = document.querySelector("#saved-movies");
 
+
+// Functions
 var searchHandler = function () {
     var actorInput = document.querySelector("#actor-input");
     var actor = actorInput.value.trim();
@@ -111,10 +114,14 @@ function displayMovie(movieData) {
     movieListEl.innerHTML += tempHtml;
 
 }
+
+
 var getSaveMovies = function () {
     return JSON.parse(localStorage.getItem("savedMovies")) || []; 
 
 }
+
+
 var saveMovie = function(title){
     var savedMovies = getSaveMovies();  
     if (savedMovies.includes(title) ){
@@ -124,6 +131,7 @@ var saveMovie = function(title){
   localStorage.setItem("savedMovies", JSON.stringify(savedMovies));
   displayWatchListSaved();
 };
+
 
 var displayWatchListSaved = function () {
     var savedMovies = getSaveMovies();   
@@ -136,12 +144,17 @@ var displayWatchListSaved = function () {
 
 }
 
+
 function displayError(errMsg) {
     $(".modal-card-title").text(errMsg);
     $(".modal").addClass("is-active is-clipped");
 }
 
+
+//Event Handlers
 popcornBtn.addEventListener("click", searchHandler);
+
+
 // this allows the user to search by using the enter button instead of just the search button click event
 actorInput.addEventListener("keyup", function (event) {
     // Number 13 is the "Enter" key on the keyboard
@@ -154,10 +167,11 @@ actorInput.addEventListener("keyup", function (event) {
 $("#close-modal-btn").click(function () {
     $(".modal").removeClass("is-active");
 });
+
+
 $(".modal-background").click(function () {
     $(".modal").removeClass("is-active");
 });
-
 
 
 $("#now-playing").on("click", ".add-to-watchlist", function(){
@@ -167,4 +181,6 @@ $("#now-playing").on("click", ".add-to-watchlist", function(){
 
 });
 
+
+// Display any saved movie titles
 displayWatchListSaved();
