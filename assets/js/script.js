@@ -109,7 +109,7 @@ function displayMovie(movieData) {
     tempHtml += "<p class='card-header-title movie-title'>" + movieData.Title + "</p>";
     tempHtml += "</header><div class='card-content'><div class='content movie-summary'>";
     tempHtml += movieData.Plot;
-    tempHtml += "</div></div><footer class='card-footer'><a href='#' class='card-footer-item add-to-watchlist'>Click here to save to Watch List</a></footer></div>";
+    tempHtml += "</div></div><footer class='card-footer'><a class='card-footer-item add-to-watchlist'>Click here to save to Watch List</a></footer></div>";
 
     movieListEl.innerHTML += tempHtml;
 
