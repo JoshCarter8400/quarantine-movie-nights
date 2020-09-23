@@ -6,7 +6,6 @@ The app will also save a "Watch List" for any movies selected within the app.
  - Backlog - next sprint - include a Streaming API so that a user can identify which streaming platform might host the saved movies.
 
 ## Webpage
-![](assets/images/webpage.png)
 https://joshcarter8400.github.io/Group-Project-1/
 ![](assets/images/webpage.png)
 ## Contributors
