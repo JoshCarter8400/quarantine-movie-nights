@@ -1,9 +1,7 @@
 var popcornBtn = document.querySelector("#search-btn");
 var searchGenre = document.querySelector("#genre-dropdown");
 var actorInput = document.querySelector("#actor-input");
-var watchListBtn = document
-var savedMovies = [];
-
+var savedMoviesEl = document.querySelector("#saved-movies");
 
 var searchHandler = function () {
     var actorInput = document.querySelector("#actor-input");
@@ -105,34 +103,43 @@ function getMovieInfo(imdbId) {
 function displayMovie(movieData) {
     var movieListEl = document.getElementById("now-playing");
     var tempHtml = "<div class='card'><header class='card-header'>";
-    tempHtml += "<p class='card-header-title movie-title' id='title'>" + movieData.Title + "</p>";
+    tempHtml += "<p class='card-header-title movie-title'>" + movieData.Title + "</p>";
     tempHtml += "</header><div class='card-content'><div class='content movie-summary'>";
     tempHtml += movieData.Plot;
-    tempHtml += "</div></div><footer class='card-footer'><a href='#' class='card-footer-item'>Click here to save to Watch List</a></footer></div>";
+    tempHtml += "</div></div><footer class='card-footer'><a href='#' class='card-footer-item add-to-watchlist'>Click here to save to Watch List</a></footer></div>";
 
     movieListEl.innerHTML += tempHtml;
 
-var addMovie = function(){
-    savedMovies = document.querySelector("#saved-movies");
-    title = document.querySelector("#title");
-    let newTitle = document.createElement("li");
-    newTitle = title;
-   $(title).clone().appendTo(savedMovies);
-
-};
-watchListBtn.addEventListener("click", addMovie);
+}
+var getSaveMovies = function () {
+    return JSON.parse(localStorage.getItem("savedMovies")) || []; 
 
 }
+var saveMovie = function(title){
+    var savedMovies = getSaveMovies();  
+    if (savedMovies.includes(title) ){
+      return;
+  } 
+  savedMovies.push(title);
+  localStorage.setItem("savedMovies", JSON.stringify(savedMovies));
+  displayWatchListSaved();
+};
 
+var displayWatchListSaved = function () {
+    var savedMovies = getSaveMovies();   
+    savedMoviesEl.innerHTML = "";
+    for (var i = 0; i < savedMovies.length; i++) {
+        var listEl = document.createElement("li");
+        listEl.innerHTML = savedMovies[i];
+        savedMoviesEl.appendChild(listEl);
+    }
 
-
+}
 
 function displayError(errMsg) {
     $(".modal-card-title").text(errMsg);
     $(".modal").addClass("is-active is-clipped");
 }
-saveInfo();
-
 
 popcornBtn.addEventListener("click", searchHandler);
 // this allows the user to search by using the enter button instead of just the search button click event
@@ -150,3 +157,14 @@ $("#close-modal-btn").click(function () {
 $(".modal-background").click(function () {
     $(".modal").removeClass("is-active");
 });
+
+
+
+$("#now-playing").on("click", ".add-to-watchlist", function(){
+
+    var title = this.closest(".card").querySelector(".movie-title").innerHTML;
+    saveMovie(title);
+
+});
+
+displayWatchListSaved();
