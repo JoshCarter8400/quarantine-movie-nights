@@ -93,7 +93,7 @@ function getImdbId(tmdbId) {
 
 
 function getMovieInfo(imdbId) {
-    var plotApi = "http://www.omdbapi.com/?apikey=3797140b&i=" + imdbId
+    var plotApi = "https://www.omdbapi.com/?apikey=3797140b&i=" + imdbId
 
     fetch(plotApi).then(function (response) {
         response.json().then(function (data) {
