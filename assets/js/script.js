@@ -97,8 +97,13 @@ function getMovieInfo(imdbId) {
 
     fetch(plotApi).then(function (response) {
         response.json().then(function (data) {
-            displayMovie(data);
-        })
+            if (data.Title) {
+                console.log(data);
+                displayMovie(data);
+            }
+        }).catch(function (error) {
+            displayError("Unable to connect to OMDb");
+        });
     })
 }
 
@@ -117,31 +122,30 @@ function displayMovie(movieData) {
 
 
 var getSaveMovies = function () {
-    return JSON.parse(localStorage.getItem("savedMovies")) || []; 
+    return JSON.parse(localStorage.getItem("savedMovies")) || [];
 
 }
 
 
-var saveMovie = function(title){
-    var savedMovies = getSaveMovies();  
-    if (savedMovies.includes(title) ){
-      return;
-  } 
-  savedMovies.push(title);
-  localStorage.setItem("savedMovies", JSON.stringify(savedMovies));
-  displayWatchListSaved();
+var saveMovie = function (title) {
+    var savedMovies = getSaveMovies();
+    if (savedMovies.includes(title)) {
+        return;
+    }
+    savedMovies.push(title);
+    localStorage.setItem("savedMovies", JSON.stringify(savedMovies));
+    displayWatchListSaved();
 };
 
 
 var displayWatchListSaved = function () {
-    var savedMovies = getSaveMovies();   
+    var savedMovies = getSaveMovies();
     savedMoviesEl.innerHTML = "";
     for (var i = 0; i < savedMovies.length; i++) {
         var listEl = document.createElement("li");
         listEl.innerHTML = savedMovies[i];
         savedMoviesEl.appendChild(listEl);
     }
-
 }
 
 
@@ -174,9 +178,11 @@ $(".modal-background").click(function () {
 });
 
 
-$("#now-playing").on("click", ".add-to-watchlist", function(){
+$("#now-playing").on("click", ".add-to-watchlist", function () {
 
     var title = this.closest(".card").querySelector(".movie-title").innerHTML;
+    this.innerHTML = "Added to Watch List";
+    this.style.color = "red";
     saveMovie(title);
 
 });
